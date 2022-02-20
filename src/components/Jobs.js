@@ -36,18 +36,34 @@ const Jobs = () => {
   return (
     <section className="section jobs">
       <Title title="experience" />
-      <div className="job-center">
+      <div className="jobs-center">
         <div className="btn-container">
           {data[0].data.map((item, index) => {
             const { company, date, description, position } = item.attributes
             return (
-              <div key={index}>
-                <h1>{company}</h1>
-              </div>
+              <button
+                key={index}
+                onClick={() => setValue(index)}
+                className={`job-btn ${index === value && "active-btn"} `}
+              >
+                {company}
+              </button>
             )
           })}
         </div>
+        <article className="job-info">
+          <h3>{position}</h3>
+          <h4>{company}</h4>
+          <p className="job-date">{date}</p>
+          <div className="job-desc">
+            <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
+            <p>{description}</p>
+          </div>
+        </article>
       </div>
+      <Link to="/about" className="btn center-btn">
+        More-info
+      </Link>
     </section>
   )
 }
