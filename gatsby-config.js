@@ -30,7 +30,7 @@ module.exports = {
       options: {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`api/jobs`],
+        collectionTypes: [`api/jobs`,`api/projects?populate=stacks,images`],
       },
     },
     // {
