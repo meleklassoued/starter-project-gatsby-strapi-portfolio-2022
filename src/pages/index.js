@@ -13,7 +13,7 @@ export default ({ data }) => {
       nodes: [Array],
     },
   } = data
-  const dataStrapi = Array.data[0].attributes
+  const dataStrapi = Array.data
   console.log(dataStrapi)
   return (
     <>
